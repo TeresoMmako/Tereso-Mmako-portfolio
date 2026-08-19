@@ -65,7 +65,11 @@ function Education() {
         />
 
         <Section eyebrow="Schooling career" title="Where I've studied">
-          <ol className="relative space-y-10 border-l border-border pl-1">
+          <ol className="relative space-y-10 pl-1">
+            <span
+              className="pointer-events-none absolute left-[11px] top-3 bottom-3 w-px bg-border"
+              aria-hidden
+            />
             {SCHOOLING.map((item) => (
               <TimelineItem key={item.institution} {...item} />
             ))}
