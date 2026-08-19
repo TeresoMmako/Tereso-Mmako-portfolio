@@ -98,7 +98,7 @@ function Education() {
         <Section
           eyebrow="Certifications"
           title="Certifications earned"
-          description="HubSpot Academy certifications. Add more here as you complete them."
+          description="HubSpot Academy certifications. "
         >
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {COURSES.map((course) => (
