@@ -7,13 +7,13 @@ import { NextPageButton } from "@/components/site/NextPageButton";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tereso Mmako — Health Sciences Student Portfolio" },
+      { title: "Tereso Mmako, Health Sciences Student Portfolio" },
       {
         name: "description",
         content:
           "Personal portfolio of Tereso Mmako, a Health Sciences student at Wits. Skills, education, certifications and contact details.",
       },
-      { property: "og:title", content: "Tereso Mmako — Health Sciences Student Portfolio" },
+      { property: "og:title", content: "Tereso Mmako, Health Sciences Student Portfolio" },
       {
         property: "og:description",
         content:

@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Heart, Image, Mail, MessagesSquare, Quote, Users } from "lucide-react";
+import { Code, Heart, Image, Mail, MessagesSquare, Quote, Users, Clapperboard } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NextPageButton } from "@/components/site/NextPageButton";
@@ -9,13 +9,13 @@ import { SkillCard } from "@/components/site/SkillCard";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Tereso Mmako — Values, Skills & Fun Facts" },
+      { title: "About Tereso Mmako, Values, Skills and Fun Facts" },
       {
         name: "description",
         content:
           "Health Sciences student guided by honesty, loyalty and compassion. Technical skills in Canva and digital communication, plus strong communication and teamwork skills.",
       },
-      { property: "og:title", content: "About Tereso Mmako — Values, Skills & Fun Facts" },
+      { property: "og:title", content: "About Tereso Mmako, Values, Skills and Fun Facts" },
       {
         property: "og:description",
         content:
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/about")({
 const VALUES = [
   { title: "Honesty", copy: "Doing the right thing, especially when nobody is watching." },
   { title: "Loyalty", copy: "Showing up consistently for the people and teams I commit to." },
-  { title: "Compassion", copy: "Leading with empathy — the heart of health sciences." },
+  { title: "Compassion", copy: "Leading with empathy, which is at the heart of health sciences." },
 ];
 
 function About() {
@@ -40,7 +40,7 @@ function About() {
         <PageHero
           eyebrow="About Me"
           title="Health Sciences Student"
-          description="I'm Tereso Mmako — a Health Sciences student at the University of the Witwatersrand who believes that people are at the centre of good care, good work and good design."
+          description="I am Tereso Mmako, a Health Sciences student at the University of the Witwatersrand. I believe that people are at the centre of good care, good work and good design."
         />
 
         <Section
@@ -67,8 +67,8 @@ function About() {
               &ldquo;Umuntu ngumuntu ngabantu&rdquo;
             </blockquote>
             <figcaption className="mt-3 text-sm text-primary-foreground/80">
-              isiZulu — &ldquo;I am because we are.&rdquo; A quote that holds all three of my values
-              together.
+              An isiZulu phrase meaning &ldquo;I am because we are.&rdquo; It is a quote that holds all
+              three of my values together.
             </figcaption>
           </figure>
         </Section>
@@ -82,7 +82,10 @@ function About() {
             <SkillCard
               icon={Image}
               title="Media & Design"
-              items={["Editing photos and creating graphics using Canva"]}
+              items={[
+                "Editing photos and creating graphics using Canva",
+                "Editing videos using Microsoft Clipchamp",
+              ]}
             />
             <SkillCard
               icon={Mail}
@@ -92,11 +95,16 @@ function About() {
                 "Digital portfolio: building a personal website using Google Sites to showcase projects",
               ]}
             />
+            <SkillCard
+              icon={Code}
+              title="Computer & Programming Skills"
+              items={["Writing basic code in Delphi"]}
+            />
           </div>
         </Section>
 
         <Section eyebrow="Soft skills" title="How I work with people">
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             <SkillCard
               icon={MessagesSquare}
               title="Communication skills"
@@ -112,6 +120,15 @@ function About() {
               items={[
                 "Collaboration: working seamlessly with people from different backgrounds",
                 "Conflict resolution: finding a middle ground that favours all the parties involved",
+              ]}
+            />
+            <SkillCard
+              icon={Heart}
+              title="Work ethic & self-management"
+              items={[
+                "Adaptability: adjusting to new tasks, tools and environments with ease",
+                "Dependability: following through on commitments and being reliable",
+                "Time management: planning and prioritising work to meet deadlines",
               ]}
             />
           </div>
