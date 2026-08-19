@@ -5,9 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system: deep forest green (#1D4533) + warm cream (#F7F2ED).
+ * Design system: deep burgundy (#42020a) + cool light highlight (#eceef9).
  * All colors are oklch tokens. Never hardcode colors in components.
  */
+
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
