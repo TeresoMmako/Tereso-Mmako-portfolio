@@ -9,13 +9,13 @@ import { TimelineItem } from "@/components/site/TimelineItem";
 export const Route = createFileRoute("/education")({
   head: () => ({
     meta: [
-      { title: "Education & Certifications — Tereso Mmako" },
+      { title: "Education and Certifications, Tereso Mmako" },
       {
         name: "description",
         content:
           "Schooling career from Germiston South Primary to the University of the Witwatersrand, plus HubSpot online courses and certifications.",
       },
-      { property: "og:title", content: "Education & Certifications — Tereso Mmako" },
+      { property: "og:title", content: "Education and Certifications, Tereso Mmako" },
       {
         property: "og:description",
         content:
@@ -61,11 +61,15 @@ function Education() {
         <PageHero
           eyebrow="Education"
           title="My learning journey"
-          description="From primary school in Germiston to university in Johannesburg — plus the online courses and certifications I've completed along the way."
+          description="From primary school in Germiston to university in Johannesburg, plus the online courses and certifications I have completed along the way."
         />
 
         <Section eyebrow="Schooling career" title="Where I've studied">
-          <ol className="relative space-y-10 border-l border-border pl-1">
+          <ol className="relative space-y-10 pl-1">
+            <span
+              className="pointer-events-none absolute left-[11px] top-3 bottom-3 w-px bg-border"
+              aria-hidden
+            />
             {SCHOOLING.map((item) => (
               <TimelineItem key={item.institution} {...item} />
             ))}

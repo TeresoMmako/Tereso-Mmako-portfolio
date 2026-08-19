@@ -68,12 +68,6 @@ function Contact() {
             </a>
           </div>
 
-          <div className="mt-8 rounded-2xl bg-primary p-8 text-primary-foreground sm:p-10">
-            <h2 className="font-display text-2xl font-extrabold">Thank you for visiting</h2>
-            <p className="mt-3 max-w-2xl text-primary-foreground/80">
-              Umuntu ngumuntu ngabantu — I am because we are. I look forward to connecting with you.
-            </p>
-          </div>
         </section>
 
         <NextPageButton to="/" label="Back to Home" />
