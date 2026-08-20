@@ -54,7 +54,8 @@ function Index() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="/tereso-mmako-cv.pdf"
-                  download
+                  download="Tereso-Mmako-CV.pdf"
+                  type="application/pdf"
                   className="inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3 font-display text-sm font-bold text-primary transition-transform hover:-translate-y-0.5"
                 >
                   <Download className="h-4 w-4" /> Download CV
