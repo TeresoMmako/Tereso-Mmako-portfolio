@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Mail, Sparkles } from "lucide-react";
+import { Download, ExternalLink, Mail, Sparkles } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NextPageButton } from "@/components/site/NextPageButton";
