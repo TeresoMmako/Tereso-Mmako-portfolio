@@ -147,7 +147,7 @@ function About() {
           </div>
         </Section>
 
-        <NextPageButton to="/education" label="Education" />
+        <NextPageButton to="/education" label="Education" back={{ to: "/", label: "Home" }} />
       </main>
       <SiteFooter />
     </div>

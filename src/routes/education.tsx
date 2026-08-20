@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, GraduationCap } from "lucide-react";
+import { Award, ExternalLink, GraduationCap } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NextPageButton } from "@/components/site/NextPageButton";
@@ -53,6 +53,30 @@ const COURSES = [
   "Social Media Marketing",
 ];
 
+const CERTIFICATIONS = [
+  ...COURSES.map((course) => ({
+    name: `${course} Certification`,
+    issuer: "HubSpot Academy",
+    year: "2026",
+    progress: 100,
+  })),
+  {
+    name: "Spirit of Youth Programme Certificate",
+    issuer: "Spirit of Youth",
+    year: "2023",
+    progress: 100,
+  },
+  { name: "Canva Essentials Certificate", issuer: "Canva", year: "2025", progress: 100 },
+  { name: "First Aid Level 1 Certificate", issuer: "First Aid Training", year: "2025", progress: 100 },
+  { name: "Google AI Essentials", issuer: "Google", year: "2026", progress: 45 },
+  {
+    name: "Content Marketing Certification",
+    issuer: "HubSpot Academy",
+    year: "2026",
+    progress: 60,
+  },
+];
+
 function Education() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -98,27 +122,68 @@ function Education() {
         <Section
           eyebrow="Certifications"
           title="Certifications earned"
-          description="HubSpot Academy certifications. "
+          description="Certificates I have completed, plus the ones I am currently working through."
         >
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {COURSES.map((course) => (
+            {CERTIFICATIONS.map((cert) => (
               <article
-                key={course}
+                key={cert.name}
                 className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1"
               >
-                <Award className="h-6 w-6 text-accent" />
+                <div className="flex items-start justify-between gap-3">
+                  <Award className="h-6 w-6 text-accent" />
+                  <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-primary">
+                    {cert.year}
+                  </span>
+                </div>
                 <div className="mt-5">
-                  <h3 className="font-display text-lg font-bold text-primary">
-                    {course} Certification
-                  </h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">HubSpot Academy</p>
+                  <h3 className="font-display text-lg font-bold text-primary">{cert.name}</h3>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{cert.issuer}</p>
+                </div>
+                <div className="mt-5">
+                  <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground">
+                    <span>{cert.progress === 100 ? "Completed" : "In progress"}</span>
+                    <span>{cert.progress}%</span>
+                  </div>
+                  <div
+                    className="mt-2 h-2 w-full overflow-hidden rounded-full bg-secondary"
+                    role="progressbar"
+                    aria-valuenow={cert.progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label={`${cert.name} progress`}
+                  >
+                    <span
+                      className="block h-full rounded-full bg-primary"
+                      style={{ width: `${cert.progress}%` }}
+                    />
+                  </div>
                 </div>
               </article>
             ))}
           </div>
         </Section>
 
-        <NextPageButton to="/contact" label="Contact Me" />
+        <Section eyebrow="Previous work" title="Previous portfolios" tone="muted">
+          <a
+            href="https://sites.google.com/students.wits.ac.za/mmako-tereso-portfolio-2?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col gap-2 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1 sm:max-w-xl"
+          >
+            <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary-soft">
+              <ExternalLink className="h-4 w-4" /> Google Sites
+            </span>
+            <span className="font-display text-lg font-bold text-primary group-hover:underline">
+              Mmako Tereso Portfolio
+            </span>
+            <span className="text-sm text-muted-foreground">
+              My earlier digital portfolio, built with Google Sites. Opens in a new tab.
+            </span>
+          </a>
+        </Section>
+
+        <NextPageButton to="/contact" label="Contact Me" back={{ to: "/about", label: "About Me" }} />
       </main>
       <SiteFooter />
     </div>

@@ -68,9 +68,16 @@ function Contact() {
             </a>
           </div>
 
+          <div className="mt-10 rounded-2xl bg-primary p-8 text-primary-foreground sm:p-10">
+            <h2 className="font-display text-2xl font-extrabold">Thanks for visiting</h2>
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-primary-foreground/80">
+              I appreciate you taking the time to look through my portfolio, and I look forward to
+              hearing from you.
+            </p>
+          </div>
         </section>
 
-        <NextPageButton to="/" label="Back to Home" />
+        <NextPageButton to="/" label="Home" back={{ to: "/education", label: "Education" }} />
       </main>
       <SiteFooter />
     </div>
