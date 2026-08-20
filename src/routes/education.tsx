@@ -13,13 +13,13 @@ export const Route = createFileRoute("/education")({
       {
         name: "description",
         content:
-          "Schooling career from Germiston South Primary to the University of the Witwatersrand, plus HubSpot online courses and certifications.",
+          "Schooling career from Germiston South Primary to the University of the Witwatersrand, plus online courses and certifications.",
       },
       { property: "og:title", content: "Education and Certifications, Tereso Mmako" },
       {
         property: "og:description",
         content:
-          "Schooling career, HubSpot online courses and certifications of Health Sciences student Tereso Mmako.",
+          "Schooling career, online courses and certifications of Health Sciences student Tereso Mmako.",
       },
     ],
   }),
@@ -52,6 +52,48 @@ const COURSES = [
   "Social Media",
   "Social Media Marketing",
 ];
+
+type Certification = {
+  name: string;
+  issuer: string;
+  year: string;
+  status: "Completed" | "In progress";
+  progress: number;
+};
+
+const CERTIFICATIONS: Certification[] = [
+  { name: "Inbound", issuer: "HubSpot Academy", year: "2026", status: "Completed", progress: 100 },
+  { name: "Digital Marketing", issuer: "HubSpot Academy", year: "2026", status: "Completed", progress: 100 },
+  { name: "Digital Advertising", issuer: "HubSpot Academy", year: "2026", status: "Completed", progress: 100 },
+  { name: "Social Media", issuer: "HubSpot Academy", year: "2026", status: "Completed", progress: 100 },
+  { name: "Social Media Marketing", issuer: "HubSpot Academy", year: "2026", status: "Completed", progress: 100 },
+  { name: "Spirit of Youth Programme", issuer: "Spirit of Youth", year: "2023", status: "Completed", progress: 100 },
+  { name: "Canva Essentials", issuer: "Canva", year: "2024", status: "Completed", progress: 100 },
+  { name: "First Aid Level 1", issuer: "Certified Provider", year: "2024", status: "Completed", progress: 100 },
+  { name: "Google AI Essentials", issuer: "Google", year: "2026", status: "In progress", progress: 55 },
+  { name: "Content Marketing", issuer: "HubSpot Academy", year: "2026", status: "In progress", progress: 40 },
+];
+
+function ProgressBar({ progress, status }: { progress: number; status: string }) {
+  const isInProgress = status === "In progress";
+  return (
+    <div className="mt-4">
+      <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
+        <div
+          className={`h-2 rounded-full transition-all ${isInProgress ? "bg-accent" : "bg-primary"}`}
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+      <p
+        className={`mt-1.5 text-xs font-semibold uppercase tracking-[0.18em] ${
+          isInProgress ? "text-accent" : "text-primary"
+        }`}
+      >
+        {status}
+      </p>
+    </div>
+  );
+}
 
 function Education() {
   return (
@@ -101,24 +143,38 @@ function Education() {
           description="HubSpot Academy certifications. "
         >
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {COURSES.map((course) => (
+            {CERTIFICATIONS.map((cert) => (
               <article
-                key={course}
-                className="flex h-full flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1"
+                key={cert.name}
+                className="flex h-full flex-col rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1"
               >
-                <Award className="h-6 w-6 text-accent" />
+                <div className="flex items-start justify-between gap-3">
+                  <Award className="h-6 w-6 shrink-0 text-accent" />
+                  {cert.year && (
+                    <span className="rounded-full bg-secondary px-2.5 py-1 text-xs font-bold text-primary">
+                      {cert.year}
+                    </span>
+                  )}
+                </div>
                 <div className="mt-5">
                   <h3 className="font-display text-lg font-bold text-primary">
-                    {course} Certification
+                    {cert.name}
                   </h3>
-                  <p className="mt-1.5 text-sm text-muted-foreground">HubSpot Academy</p>
+                  <p className="mt-1.5 text-sm text-muted-foreground">{cert.issuer}</p>
+                </div>
+                <div className="mt-auto">
+                  <ProgressBar progress={cert.progress} status={cert.status} />
                 </div>
               </article>
             ))}
           </div>
         </Section>
 
-        <NextPageButton to="/contact" label="Contact Me" />
+        <NextPageButton
+          to="/contact"
+          label="Contact Me"
+          back={{ to: "/about", label: "About Me" }}
+        />
       </main>
       <SiteFooter />
     </div>

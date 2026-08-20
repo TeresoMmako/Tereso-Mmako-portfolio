@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Code, Heart, Image, Mail, MessagesSquare, Quote, Users } from "lucide-react";
+import { Code, ExternalLink, Heart, Image, Mail, MessagesSquare, Quote, Users } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NextPageButton } from "@/components/site/NextPageButton";
