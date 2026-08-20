@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Code, ExternalLink, Heart, Image, Mail, MessagesSquare, Quote, Users } from "lucide-react";
+import { Code, Heart, Image, Mail, MessagesSquare, Quote, Users } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { NextPageButton } from "@/components/site/NextPageButton";
@@ -147,34 +147,7 @@ function About() {
           </div>
         </Section>
 
-        <Section eyebrow="My work" title="Previous projects">
-          <a
-            href="https://sites.google.com/students.wits.ac.za/mmako-tereso-portfolio-2?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col gap-4 rounded-2xl border border-border bg-card p-8 shadow-[var(--shadow-soft)] transition-transform hover:-translate-y-1 sm:flex-row sm:items-center sm:justify-between"
-          >
-            <div>
-              <h3 className="font-display text-lg font-bold text-primary">
-                My Digital Portfolio
-              </h3>
-              <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                Explore my earlier projects, coursework and creative work on my Google Sites portfolio.
-                Click the link to visit the site.
-              </p>
-            </div>
-            <span className="inline-flex shrink-0 items-center gap-2 rounded-full bg-primary px-6 py-3 font-display text-sm font-bold text-primary-foreground transition-colors group-hover:bg-primary-soft">
-              Visit project site
-              <ExternalLink className="h-4 w-4" />
-            </span>
-          </a>
-        </Section>
-
-        <NextPageButton
-          to="/education"
-          label="Education"
-          back={{ to: "/", label: "Home" }}
-        />
+        <NextPageButton to="/education" label="Education" />
       </main>
       <SiteFooter />
     </div>
