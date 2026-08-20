@@ -65,6 +65,14 @@ function Index() {
                 >
                   <Mail className="h-4 w-4" /> Get in touch
                 </Link>
+                <a
+                  href="https://sites.google.com/students.wits.ac.za/mmako-tereso-portfolio-2?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-cream/40 px-6 py-3 font-display text-sm font-bold text-primary-foreground transition-colors hover:bg-cream/10"
+                >
+                  <ExternalLink className="h-4 w-4" /> View my projects
+                </a>
               </div>
             </div>
           </div>
